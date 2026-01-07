@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A quiet place for one line at a time.">
+  <title>Lines</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main>
+    <article id="line-display" class="line-container">
+      <p id="line-text" class="line-text"></p>
+      <small id="line-source" class="line-source"></small>
+    </article>
+  </main>
+
+  <footer>
+    <a href="https://buymeacoffee.com/example" target="_blank" rel="noopener noreferrer" class="coffee-link">
+      Buy me a coffee
+    </a>
+  </footer>
+
+  <script type="module" src="/app.js"></script>
+  <script type="module">
+    import {
+      loadLines,
+      getRandomLine,
+      getLineById,
+      getLastLineId,
+      saveLastLineId
+    } from '/app.js';
+
+    // Get DOM elements
+    const lineText = document.getElementById('line-text');
+    const lineSource = document.getElementById('line-source');
+    const lineDisplay = document.getElementById('line-display');
+
+    // Parse URL path to check for line ID
+    const path = window.location.pathname;
+    const lineId = path === '/' ? null : path.substring(1);
+
+    // Initialize and display line
+    async function init() {
+      try {
+        const lines = await loadLines();
+
+        let line;
+
+        if (lineId) {
+          // Show specific line by ID
+          line = getLineById(lines, lineId);
+          if (!line) {
+            // If line not found, show random
+            line = getRandomLine(lines);
+          }
+        } else {
+          // Show random line, avoiding last one
+          const lastId = getLastLineId();
+          line = getRandomLine(lines, lastId);
+        }
+
+        // Display the line
+        if (line) {
+          lineText.textContent = line.text;
+          lineSource.textContent = line.source || '';
+
+          // Save to localStorage (unless viewing specific permalink)
+          if (!lineId) {
+            saveLastLineId(line.id);
+          }
+
+          // Trigger fade-in animation
+          setTimeout(() => {
+            lineDisplay.classList.add('visible');
+          }, 50);
+        }
+      } catch (error) {
+        console.error('Failed to initialize:', error);
+        lineText.textContent = 'Unable to load content.';
+        lineDisplay.classList.add('visible');
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>

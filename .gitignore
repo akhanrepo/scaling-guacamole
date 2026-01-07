@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Development
+.DS_Store
+*.log
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+coverage/

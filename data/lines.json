@@ -1,0 +1,50 @@
+[
+  {
+    "id": "whitman-leaves",
+    "text": "I exist as I am, that is enough.",
+    "source": "Walt Whitman, Leaves of Grass",
+    "tags": ["poetry", "self", "existence"]
+  },
+  {
+    "id": "dickinson-hope",
+    "text": "Hope is the thing with feathers that perches in the soul.",
+    "source": "Emily Dickinson",
+    "tags": ["poetry", "hope", "soul"]
+  },
+  {
+    "id": "rilke-patience",
+    "text": "Be patient toward all that is unsolved in your heart.",
+    "source": "Rainer Maria Rilke, Letters to a Young Poet",
+    "tags": ["wisdom", "patience", "heart"]
+  },
+  {
+    "id": "oliver-attention",
+    "text": "Attention is the beginning of devotion.",
+    "source": "Mary Oliver",
+    "tags": ["poetry", "attention", "devotion"]
+  },
+  {
+    "id": "baldwin-love",
+    "text": "Love takes off the masks that we fear we cannot live without and know we cannot live within.",
+    "source": "James Baldwin, The Fire Next Time",
+    "tags": ["love", "truth", "masks"]
+  },
+  {
+    "id": "woolf-moments",
+    "text": "The beauty of the world has two edges, one of laughter, one of anguish, cutting the heart asunder.",
+    "source": "Virginia Woolf, A Room of One's Own",
+    "tags": ["beauty", "duality", "heart"]
+  },
+  {
+    "id": "lorca-silence",
+    "text": "The silence speaks for us.",
+    "source": "Federico García Lorca",
+    "tags": ["silence", "poetry", "communication"]
+  },
+  {
+    "id": "rumi-wound",
+    "text": "The wound is the place where the Light enters you.",
+    "source": "Rumi",
+    "tags": ["healing", "light", "wisdom"]
+  }
+]
