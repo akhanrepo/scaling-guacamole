@@ -1,0 +1,164 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #2c2c2c;
+  background-color: #fafafa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Main content area */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  width: 100%;
+}
+
+/* Line container */
+.line-container {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.line-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Line text */
+.line-text {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Source attribution */
+.line-source {
+  display: block;
+  font-size: 0.875rem;
+  color: #6b6b6b;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+/* Footer */
+footer {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.coffee-link {
+  font-size: 0.8125rem;
+  color: #8a8a8a;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  letter-spacing: 0.03em;
+}
+
+.coffee-link:hover,
+.coffee-link:focus {
+  color: #4a4a4a;
+}
+
+/* Tablet and larger */
+@media (min-width: 768px) {
+  main {
+    padding: 3rem 2rem;
+  }
+
+  .line-text {
+    font-size: 1.75rem;
+    line-height: 1.9;
+  }
+
+  .line-source {
+    font-size: 0.9375rem;
+  }
+
+  .coffee-link {
+    font-size: 0.875rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .line-text {
+    font-size: 2rem;
+    line-height: 2;
+    margin-bottom: 2rem;
+  }
+
+  .line-source {
+    font-size: 1rem;
+  }
+}
+
+/* High resolution screens */
+@media (min-width: 1440px) {
+  main {
+    padding: 4rem 2rem;
+  }
+
+  .line-container {
+    max-width: 700px;
+  }
+
+  .line-text {
+    font-size: 2.25rem;
+  }
+}
+
+/* Dark mode support (respects system preference) */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+  }
+
+  .line-text {
+    color: #f5f5f5;
+  }
+
+  .line-source {
+    color: #a0a0a0;
+  }
+
+  .coffee-link {
+    color: #8a8a8a;
+  }
+
+  .coffee-link:hover,
+  .coffee-link:focus {
+    color: #c0c0c0;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .line-container {
+    transition: none;
+  }
+}

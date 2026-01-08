@@ -1,0 +1,16 @@
+{
+  "name": "lines",
+  "version": "1.0.0",
+  "description": "A minimal, static-first web application displaying one curated line at a time",
+  "private": true,
+  "scripts": {
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'No build step needed - static files only'"
+  },
+  "devDependencies": {
+    "vitest": "^1.0.0",
+    "happy-dom": "^12.0.0"
+  }
+}
